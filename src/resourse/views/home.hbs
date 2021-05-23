@@ -1,0 +1,19 @@
+<div class="grid">
+    <h2 class="heading">Name Page</h2>
+    <div class="grid wide">
+        <div class="col row">
+            {{#each duongs}}
+                <div class="l-2">
+                    <div class="name">
+                         <h1><a href="/name/{{this.slug}}">{{this.name}}</a></h1>
+                         <h1>{{this.age}}</h1>
+                    </div>
+                </div>
+            {{/each}}   
+        </div>
+    </div>
+
+    
+        
+    
+</div>
