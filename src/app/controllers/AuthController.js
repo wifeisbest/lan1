@@ -29,7 +29,7 @@ class AuthController {
         try {
             const user = await User.create(req.body);
             
-            res.render('auth/registed',{layout: 'layout1', })
+            res.render('auth/registed',{layout: 'layout1',user: simple(user) })
 
         } catch (error) {
             res.json(error)

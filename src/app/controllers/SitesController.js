@@ -16,6 +16,11 @@ class SiteController {
             .catch(next)
         
     }
+    token(req,res,next){
+       
+        res.render('token').cookie('cart', {items: [1,2,3] }); 
+        
+    }
 }
 
 module.exports = new SiteController;

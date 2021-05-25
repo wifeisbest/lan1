@@ -5,6 +5,7 @@ const sitesController = require('../app/controllers/SitesController');
 
 
 router.get('/about',sitesController.about)
+router.get('/token',sitesController.token)
 
 
 
