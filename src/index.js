@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Require Framwork
 const express = require('express');
 const app = express();

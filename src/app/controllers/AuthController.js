@@ -1,5 +1,7 @@
 const User = require('../model/User');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 const { muti } = require('../../until/mongoose');
 const { simple } = require('../../until/mongoose');
 class AuthController {
@@ -16,8 +18,8 @@ class AuthController {
                 // Error : Email not found
             }
             if(bcrypt.compareSync(req.body.password, user.password)){
-                
-               res.render('auth/logined',{layout: 'layout1', user: simple(user)});
+             const token = jwt.sign({userId: user._id},process.env.APP_SECRET);
+               res.render('auth/logined',{layout: 'layout1', user: simple(user),token});
             }else{
                 // Error : Password is not correct
             }
